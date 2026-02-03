@@ -6,3 +6,13 @@ CREATE TABLE price_history(
     recorded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
+
+
+CREATE TABLE ai_insight(
+    insight_id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    product_id BIGINT NOT NULL,
+    insight_text TEXT NOT NULL,
+    confidence_score DECIMAL(3,2),
+    generated_at TIMESTAMP DEFAULT CURRENET_TIMESTAMP,
+    FOREIGN KEY(product_id) REFERENCES product(product_id)
+);
