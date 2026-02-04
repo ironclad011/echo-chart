@@ -37,12 +37,10 @@ CREATE TABLE price_history(
 
 
 CREATE TABLE ai_insight(
-    insight_id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     insight_id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     product_id BIGINT NOT NULL,
     insight_text TEXT NOT NULL,
     confidence_score DECIMAL(3,2),
-    generated_at TIMESTAMP DEFAULT CURRENET_TIMESTAMP,
     generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(product_id) REFERENCES product(product_id)
 );
