@@ -1,3 +1,12 @@
+INSERT INTO users (email, password_hash)
+VALUES ('test@example.com', 'hashed_pw');
+
+INSERT INTO product (name, url)
+VALUES ('Test Product', 'https://example.com');
+
+INSERT INTO user_product (user_id, product_id)
+VALUES (1, 1);
+
 INSERT INTO price_history(product_id,source,price)
 VALUES
 (1,'Amazon',59999.00),
